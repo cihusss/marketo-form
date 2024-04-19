@@ -28,52 +28,11 @@ export const FormBreaker = (currentScript) => {
       }
     },
 
-    // Edit required fields as needed
-
     requiredFields: rq
 
-    // requiredFields: [
-      // {
-      //   name: "FirstName",
-      //   message: "This field is required."
-      // }
-
-      // {
-      //   name: "Program_of_Interest__c",
-      //   message: "This field is required."
-      // },
-      // {
-      //   name: "Highest_Level_of_Education__c",
-      //   message: "This field is required."
-      // },
-      // {
-      //   name: "FirstName",
-      //   message: "This field is required."
-      // },
-      // {
-      //   name: "LastName",
-      //   message: "This field is required."
-      // },
-      // {
-      //   name: "Email",
-      //   message: "This field is required."
-      // },
-      // {
-      //   name: "Phone",
-      //   message: "This field is required."
-      // },
-      // {
-      //   name: "Military_Relationship__c",
-      //   message: "This field is required."
-      // },
-      // {
-      //   name: "CountryCode",
-      //   message: "This field is required."
-      // }
-  //   ]
   };
 
-//////////// Marketo Form Magic ///////////
+  //////////// Marketo Form Magic ///////////
 
   MktoForms2.whenReady(function(form) {
 
