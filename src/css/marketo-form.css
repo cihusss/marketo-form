@@ -179,9 +179,10 @@ input[type=text], input[type=button], select {
 }
 
 .form-disc {
-    font-size:  0.7em;
-    padding: 24px 0 0 0 !important;
-    line-height: 1.6em;
+    font-size: .7em;
+    padding: 12px 0 0 !important;
+    line-height: 1.2em;
+    opacity: .7;
 }
 
 .form-disc a {
