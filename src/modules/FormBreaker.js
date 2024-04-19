@@ -111,7 +111,6 @@ export const FormBreaker = (currentScript) => {
       })[0];
 
     arrayify(fieldRows).forEach(function(row, rowIdx) {
-      console.log('fieldRow:', row);
       var rowPos = {
         isFirst: rowIdx == 0,
         isLast: rowIdx == fieldRows.length - 1
@@ -283,11 +282,11 @@ export const FormBreaker = (currentScript) => {
     let lala = document.querySelectorAll('.mktoField');
     lala.forEach(element => {
       element.addEventListener('focusin', function() {
-        console.log('focusIn');
+        // console.log('focusIn');
         // element.setAttribute('style', 'padding: 12px 6px 0 6px !important');
       });
       element.addEventListener('focusout', function() {
-        console.log('focusOut');
+        // console.log('focusOut');
         // element.setAttribute('style', 'padding: 2px 6px 0 6px !important');
       });
     });
