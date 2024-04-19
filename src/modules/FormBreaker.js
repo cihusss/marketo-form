@@ -1,9 +1,21 @@
-export const FormBreaker = () => {
+export const FormBreaker = (currentScript) => {
 
-// MktoForms2.loadForm("https://learn.bisk.com", "058-NIT-467", 7774);
-  MktoForms2.loadForm("https://learn.bisk.com", "058-NIT-467", 5262);
+  const formId = document.getElementsByClassName('lp-form')[0].id.split('mktoForm_').pop();
+  console.log('formId:', formId);
 
-//////////// Marketo Form Config ///////////
+  MktoForms2.loadForm("https://learn.bisk.com", "058-NIT-467", formId);
+
+  //////////// Marketo Form Config ///////////
+
+  const requiredFields = currentScript.getAttribute('requiredFields').split(',');
+  const rq = []
+
+  requiredFields.forEach((field) => {
+    rq.push({
+      name: field.trim(),
+      message: "This field is required."
+    });
+  });
 
   var userConfig = {
     buttons: {
@@ -18,40 +30,47 @@ export const FormBreaker = () => {
 
     // Edit required fields as needed
 
-    requiredFields: [
-      {
-        name: "Program_of_Interest__c",
-        message: "This field is required."
-      },
-      {
-        name: "Highest_Level_of_Education__c",
-        message: "This field is required."
-      },
-      {
-        name: "FirstName",
-        message: "This field is required."
-      },
-      {
-        name: "LastName",
-        message: "This field is required."
-      },
-      {
-        name: "Email",
-        message: "This field is required."
-      },
-      {
-        name: "Phone",
-        message: "This field is required."
-      },
-      {
-        name: "Military_Relationship__c",
-        message: "This field is required."
-      },
-      {
-        name: "CountryCode",
-        message: "This field is required."
-      }
-    ]
+    requiredFields: rq
+
+    // requiredFields: [
+      // {
+      //   name: "FirstName",
+      //   message: "This field is required."
+      // }
+
+      // {
+      //   name: "Program_of_Interest__c",
+      //   message: "This field is required."
+      // },
+      // {
+      //   name: "Highest_Level_of_Education__c",
+      //   message: "This field is required."
+      // },
+      // {
+      //   name: "FirstName",
+      //   message: "This field is required."
+      // },
+      // {
+      //   name: "LastName",
+      //   message: "This field is required."
+      // },
+      // {
+      //   name: "Email",
+      //   message: "This field is required."
+      // },
+      // {
+      //   name: "Phone",
+      //   message: "This field is required."
+      // },
+      // {
+      //   name: "Military_Relationship__c",
+      //   message: "This field is required."
+      // },
+      // {
+      //   name: "CountryCode",
+      //   message: "This field is required."
+      // }
+  //   ]
   };
 
 //////////// Marketo Form Magic ///////////
@@ -92,6 +111,7 @@ export const FormBreaker = () => {
       })[0];
 
     arrayify(fieldRows).forEach(function(row, rowIdx) {
+      console.log('fieldRow:', row);
       var rowPos = {
         isFirst: rowIdx == 0,
         isLast: rowIdx == fieldRows.length - 1
