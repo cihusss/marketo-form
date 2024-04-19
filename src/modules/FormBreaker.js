@@ -9,6 +9,7 @@ export const FormBreaker = (currentScript) => {
 
   const requiredFields = currentScript.getAttribute('requiredFields').split(',');
   const btnBg = currentScript.getAttribute('btnBg');
+  const btnFg = currentScript.getAttribute('btnFg');
   const rq = []
 
   requiredFields.forEach((field) => {
@@ -231,9 +232,11 @@ export const FormBreaker = (currentScript) => {
       }
     });
     btnSubmit.style.background = btnBg;
+    btnSubmit.style.color = btnFg;
 
     let btnNext = document.querySelector('button[data-dir="next"]');
     btnNext.style.background = btnBg;
+    btnNext.style.color = btnFg;
 
     let legends = document.querySelectorAll('legend');
     legends.forEach(element => {
