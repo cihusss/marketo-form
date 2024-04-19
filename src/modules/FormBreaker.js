@@ -8,6 +8,7 @@ export const FormBreaker = (currentScript) => {
   //////////// Marketo Form Config ///////////
 
   const requiredFields = currentScript.getAttribute('requiredFields').split(',');
+  const btnBg = currentScript.getAttribute('btnBg');
   const rq = []
 
   requiredFields.forEach((field) => {
@@ -229,6 +230,10 @@ export const FormBreaker = (currentScript) => {
         document.querySelector('button[type="button"]:nth-child(1)').style.display = 'none !important';
       }
     });
+    btnSubmit.style.background = btnBg;
+
+    let btnNext = document.querySelector('button[data-dir="next"]');
+    btnNext.style.background = btnBg;
 
     let legends = document.querySelectorAll('legend');
     legends.forEach(element => {

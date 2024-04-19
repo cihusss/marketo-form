@@ -96,7 +96,7 @@
 .mktoButton {
     border-radius: 4px;
     height: 42px;
-    background: #FECE4D !important;
+    background: #FECE4D;
     color: #000 !important;
     border: none !important;
     margin: 6px 0 0 0 !important;
