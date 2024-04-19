@@ -18,11 +18,12 @@
 }
 
 .mktoForm {
-    padding: 16px 0 24px 0;
+    padding: 24px;
     border-radius: 4px;
     width: 100% !important;
     font-family: 'Noto Sans', sans-serif !important;
     margin-top: 8px;
+    background: white;
 }
 
 .mktoForm label {
