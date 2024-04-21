@@ -6,7 +6,7 @@ export const FormBreaker = (currentScript) => {
     return;
   }
 
-  console.log(`Found form ${formId} in DOM:`);
+  console.log(`Found form ${formId} in DOM`);
 
   MktoForms2.loadForm('https://learn.bisk.com', '058-NIT-467', formId);
 
@@ -43,7 +43,7 @@ export const FormBreaker = (currentScript) => {
   //////////// Marketo Form Magic ///////////
 
   MktoForms2.whenReady(function (form) {
-    console.log(`Form ${formId} is ready`);
+    console.log(`Form ${formId} is now ready`);
 
     let mForm = form;
     var formEl = form.getFormElem()[0],
