@@ -214,7 +214,7 @@ export const FormBreaker = (currentScript) => {
     }
 
     const labelLogic = (input) => {
-      if (input.type === 'text') {
+      if (input.type !== 'radio') {
         input.addEventListener('focusin', function () {
           let boo = this.previousSibling.previousSibling;
           boo.style.opacity = '1';
