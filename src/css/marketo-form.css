@@ -121,7 +121,7 @@
 }
 
 .mktoLabel[for="Company_Name__c"] {
-    opacity: 1 !important;
+    /*opacity: 1 !important;*/
 }
 
 .mktoLabel:has(.label-visible) {
@@ -226,7 +226,7 @@ input[type=text], input[type=button], select {
     top: 0 !important;
     margin: 0 14px 0 -8px !important;
     font-size: 12px !important;
-    opacity: 1 !important;
+    /*opacity: 1 !important;*/
 }
 
 .mktoRadioList input[type="radio"] {

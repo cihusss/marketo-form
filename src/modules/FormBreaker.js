@@ -191,8 +191,7 @@ export const FormBreaker = (currentScript) => {
       input.setAttribute('placeholder', name);
     }
 
-    for (i = 0; i < inputs.length; i++) {
-      let input = document.getElementsByClassName('mktoField')[i];
+    const labelLogic = (input) => {
       if (input.type === "text") {
         input.addEventListener('focusin', function () {
           let boo = this.previousSibling.previousSibling;
@@ -212,17 +211,22 @@ export const FormBreaker = (currentScript) => {
         });
       }
       else if (input.type === "radio") {
-        console.log('radio');
-        console.log(input);
       }
     }
 
-    document.addEventListener("DOMSubtreeModified", (e) => {
-      console.log(e);
-      if (e.target.outerText === "Company Name (L):") {
-        console.log('found');
-      }
-    });
+    for (i = 0; i < inputs.length; i++) {
+      let input = document.getElementsByClassName('mktoField')[i];
+      labelLogic(input);
+    }
+
+   document.querySelectorAll('input[name="Group_Opportunity__c"]')[1].addEventListener('click', () => {
+     console.log('clicked');
+     setTimeout(() => {
+       let input = document.querySelectorAll('input[name="Company_Name__c"]')[0];
+       input.placeholder = document.querySelectorAll('label[for="Company_Name__c"]')[0].innerText;
+       labelLogic(input);
+     }, 10);
+   });
 
     console.log(inputs[0].value);
 
