@@ -120,6 +120,16 @@
     transition: opacity .3s ease-out;
 }
 
+.mktoLabel[for="Company_Name__c"] {
+    opacity: 1 !important;
+}
+
+.mktoLabel:has(.label-visible) {
+    opacity: 1 !important;
+    display: flex;
+    position: relative;
+    margin: -6px 0 20px -12px;
+}
 .mktoAsterix {
     padding-left: 4px !important;
 }
@@ -198,6 +208,34 @@ input[type=text], input[type=button], select {
 #skinny-crosslink-href h3 {
     margin-top: 0;
 }
+
+.mktoForm .mktoRadioList {
+    padding: 0.3em;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: auto !important;
+    margin: 11px 0 -5px -2px !important
+}
+
+.mktoRadioList label {
+    display: block;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0 14px 0 -8px !important;
+    font-size: 12px !important;
+    opacity: 1 !important;
+}
+
+.mktoRadioList input[type="radio"] {
+    transform: scale(1.0);
+    height: 12px !important;
+    width: auto !important;
+    margin: 0 4px 0 0 !important;
+}
+
 
 @media (max-width: 767px) {
 

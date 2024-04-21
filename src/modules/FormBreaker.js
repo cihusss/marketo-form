@@ -193,24 +193,36 @@ export const FormBreaker = (currentScript) => {
 
     for (i = 0; i < inputs.length; i++) {
       let input = document.getElementsByClassName('mktoField')[i];
-      input.addEventListener('focusin', function() {
-        let boo = this.previousSibling.previousSibling;
-        boo.style.opacity = '1';
-        let placeholder = this.setAttribute('placeholder', '');
-        this.setAttribute('style', 'padding: 12px 6px 0 6px !important');
-      });
-      input.addEventListener('focusout', function() {
-        let boo = this.previousSibling.previousSibling;
-        let placeholder = this.setAttribute('placeholder', boo.innerHTML.split("</div>").pop());
-        if(this.value == "") {
-          boo.style.opacity = '0';
-          this.setAttribute('style', 'padding: 2px 6px 0 6px !important');
-        }
-        else {
+      if (input.type === "text") {
+        input.addEventListener('focusin', function () {
+          let boo = this.previousSibling.previousSibling;
           boo.style.opacity = '1';
-        }
-      });
+          let placeholder = this.setAttribute('placeholder', '');
+          this.setAttribute('style', 'padding: 12px 6px 0 6px !important');
+        });
+        input.addEventListener('focusout', function () {
+          let boo = this.previousSibling.previousSibling;
+          let placeholder = this.setAttribute('placeholder', boo.innerHTML.split("</div>").pop());
+          if (this.value == "") {
+            boo.style.opacity = '0';
+            this.setAttribute('style', 'padding: 2px 6px 0 6px !important');
+          } else {
+            boo.style.opacity = '1';
+          }
+        });
+      }
+      else if (input.type === "radio") {
+        console.log('radio');
+        console.log(input);
+      }
     }
+
+    document.addEventListener("DOMSubtreeModified", (e) => {
+      console.log(e);
+      if (e.target.outerText === "Company Name (L):") {
+        console.log('found');
+      }
+    });
 
     console.log(inputs[0].value);
 
