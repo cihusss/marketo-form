@@ -1,5 +1,11 @@
 export const FormBreaker = (currentScript) => {
   const formId = document.getElementsByClassName('lp-form')[0].id.split('mktoForm_').pop();
+
+  if (formId === undefined) {
+    console.log('No form ID found in DOM');
+    return;
+  }
+
   console.log(`Found form ${formId} in DOM:`);
 
   MktoForms2.loadForm('https://learn.bisk.com', '058-NIT-467', formId);
