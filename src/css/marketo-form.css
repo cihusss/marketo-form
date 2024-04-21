@@ -1,174 +1,175 @@
 /* --- multi-step form --- */
 
 .mktoForm > .mktoFormRow fieldset {
-    border: none;
+  border: none;
 }
 .mktoForm > .mktoFormRow,
 .mktoForm > .mktoButtonRow,
 .mktoForm > .mktoFormRow fieldset legend {
-    display: none;
+  display: none;
 }
-.mktoForm > .mktoButtonRow button[type="button"] {
-    margin-right: 10px;
-    margin-bottom: 10px;
+.mktoForm > .mktoButtonRow button[type='button'] {
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 .mktoForm .mktoCheckboxList > .mktoError {
-    right: auto !important;
-    bottom: -54px !important;
+  right: auto !important;
+  bottom: -54px !important;
 }
 
 .mktoForm {
-    padding: 24px;
-    width: 100% !important;
-    font-family: 'Noto Sans', sans-serif !important;
-    background: white;
+  padding: 24px;
+  width: 100% !important;
+  font-family: 'Noto Sans', sans-serif !important;
+  background: white;
 }
 
 .mktoForm label {
-    width: auto !important;
-    top: 20px;
-    display: block;
-    position: absolute;
-    left: 6px;
-    font-size: 9px;
+  width: auto !important;
+  top: 20px;
+  display: block;
+  position: absolute;
+  left: 6px;
+  font-size: 9px;
 }
 
 .mktoForm input {
-    width: 100% !important;
-    height: 42px !important;
-    border: 1px solid #a9a9a9;
-    border-radius: 4px;
-    padding: 2px 6px 0 6px !important;
+  width: 100% !important;
+  height: 42px !important;
+  border: 1px solid #a9a9a9;
+  border-radius: 4px;
+  padding: 2px 6px 0 6px !important;
 }
 
-.mktoForm input, .mktoForm select {
-    font-size: 1.1em !important;
+.mktoForm input,
+.mktoForm select {
+  font-size: 1.1em !important;
 }
 
 .mktoForm select {
-    width: 100% !important;
-    height: 42px !important;
-    border: 1px solid #a9a9a9;
-    border-radius: 4px;
-    background: white;
-    background-image:
-            linear-gradient(45deg, transparent 50%, #022064 50%),
-            linear-gradient(135deg, #022064 50%, transparent 50%),
-            linear-gradient(to right, white, white);
-    background-position:
-            calc(100% - 20px) calc(1em + 4px),
-            calc(100% - 15px) calc(1em + 4px),
-            100% 0;
-    background-size:
-            5px 5px,
-            5px 5px,
-            2.5em 2.5em;
-    background-repeat: no-repeat;
-    padding: 2px 6px 0 6px !important;
+  width: 100% !important;
+  height: 42px !important;
+  border: 1px solid #a9a9a9;
+  border-radius: 4px;
+  background: white;
+  background-image: linear-gradient(45deg, transparent 50%, #022064 50%),
+    linear-gradient(135deg, #022064 50%, transparent 50%), linear-gradient(to right, white, white);
+  background-position:
+    calc(100% - 20px) calc(1em + 4px),
+    calc(100% - 15px) calc(1em + 4px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  padding: 2px 6px 0 6px !important;
 }
 
 .mktoForm fieldset {
-    padding: 0 !important;
-    width: 100%;
+  padding: 0 !important;
+  width: 100%;
 }
 
 .mktoFieldDescriptor {
-    width: 100%;
-    margin: 0 !important;
+  width: 100%;
+  margin: 0 !important;
 }
 
 .mktoFieldWrap {
-    width: 100%;
+  width: 100%;
 }
 
 .mktoOffset {
-    display: none;
+  display: none;
 }
 
 .mktoButtonWrap {
-    width: 100%;
-    margin: 0 !important;
-    display: flex;
-    justify-content: flex-end;
+  width: 100%;
+  margin: 0 !important;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .mktoButton {
-    border-radius: 4px;
-    height: 42px;
-    background: #FECE4D;
-    color: #000;
-    border: none !important;
-    margin: 6px 0 0 0 !important;
-    /*padding: 8px 24px !important;*/
-    width: 100%;
-    font-family: 'Barlow Condensed', sans-serif !important;
-    text-transform: uppercase;
-    font-size: 1.2em !important;
+  border-radius: 4px;
+  height: 42px;
+  background: #fece4d;
+  color: #000;
+  border: none !important;
+  margin: 6px 0 0 0 !important;
+  /*padding: 8px 24px !important;*/
+  width: 100%;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  text-transform: uppercase;
+  font-size: 1.2em !important;
 }
 
-.mktoButton[data-dir="prev"] {
-    background: #a4a4a4 !important;
-    margin: 6px 16px 0 0 !important;
+.mktoButton[data-dir='prev'] {
+  background: #a4a4a4 !important;
+  margin: 6px 16px 0 0 !important;
 }
 
 .mktoForm .mktoRequiredField label.mktoLabel {
-    font-weight: normal !important;
+  font-weight: normal !important;
 }
 
 .mktoLabel {
-    opacity: 0;
-    transition: opacity .3s ease-out;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
 }
 
-.mktoLabel[for="Company_Name__c"] {
-    /*opacity: 1 !important;*/
+.mktoLabel[for='Company_Name__c'] {
+  /*opacity: 1 !important;*/
 }
 
 .mktoLabel:has(.label-visible) {
-    opacity: 1 !important;
-    display: flex;
-    position: relative;
-    margin: -6px 0 20px -12px;
+  opacity: 1 !important;
+  display: flex;
+  position: relative;
+  margin: -6px 0 20px -12px;
 }
 .mktoAsterix {
-    padding-left: 4px !important;
+  padding-left: 4px !important;
 }
 
 .mktoErrorMsg {
-    background: #cc0000 !important;
-    border-radius: 4px !important;
-    box-shadow: none !important;
-    border: none !important;
+  background: #cc0000 !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .mktoErrorArrow {
-    background-position: #cc0000 !important;
-    box-shadow: none !important;
-    border: none !important;
+  background-position: #cc0000 !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .mktoForm .mktoAsterix {
-    opacity: 0;
+  opacity: 0;
 }
 
 .mktoHtmlText {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 .mktoForm legend {
-    display: block !important;
-    margin: 0 0 -12px !important;
-    font-size: 12px;
-    font-family: 'Noto Sans', sans-serif;
-    opacity: .6;
+  display: block !important;
+  margin: 0 0 -12px !important;
+  font-size: 12px;
+  font-family: 'Noto Sans', sans-serif;
+  opacity: 0.6;
 }
 
-input, input::placeholder, select {
-    color: #4C4C4C;
+input,
+input::placeholder,
+select {
+  color: #4c4c4c;
 }
 
 option:first-child {
-    color: red!important;
+  color: red !important;
 }
 
 input:-webkit-autofill,
@@ -180,250 +181,143 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    /*-webkit-box-shadow: 0 0 0px 1000px #000 inset;*/
-    transition: background-color 5000s ease-in-out 0s;
+  /*-webkit-box-shadow: 0 0 0px 1000px #000 inset;*/
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-input[type=text], input[type=button], select {
-    -webkit-appearance: none;
+input[type='text'],
+input[type='button'],
+select {
+  -webkit-appearance: none;
 }
 
 .form-disc {
-    font-size: .7em;
-    padding: 12px 0 0 !important;
-    line-height: 1.2em;
-    opacity: .7;
+  font-size: 0.7em;
+  padding: 12px 0 0 !important;
+  line-height: 1.2em;
+  opacity: 0.7;
 }
 
 .form-disc a {
-    text-decoration: underline;
-    color: #022064;
+  text-decoration: underline;
+  color: #022064;
 }
 
 #skinny-crosslink a {
-    text-decoration: underline;
-    display: block;
+  text-decoration: underline;
+  display: block;
 }
 
 #skinny-crosslink-href h3 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .mktoForm .mktoRadioList {
-    padding: 0.3em;
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    width: auto !important;
-    margin: 11px 0 -5px -2px !important
+  padding: 0.3em;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: auto !important;
+  margin: 11px 0 -5px -2px !important;
 }
 
 .mktoRadioList label {
-    display: block;
-    position: relative !important;
-    top: 0 !important;
-    margin: 1px 14px 0 -8px !important;
-    font-size: 12px !important;
-    /*opacity: 1 !important;*/
+  display: block;
+  position: relative !important;
+  top: 0 !important;
+  margin: 1px 14px 0 -8px !important;
+  font-size: 12px !important;
+  /*opacity: 1 !important;*/
 }
 
-.mktoRadioList input[type="radio"] {
-    transform: scale(1.0);
-    height: 12px !important;
-    width: auto !important;
-    margin: 0 4px 0 0 !important;
+.mktoRadioList input[type='radio'] {
+  transform: scale(1);
+  height: 12px !important;
+  width: auto !important;
+  margin: 0 4px 0 0 !important;
 }
-
 
 @media (max-width: 767px) {
 
-    h1 { font-size: 2.4em; }
+  .mktoRadioList input[type='radio'] {
+    transform: scale(2);
+    height: 12px !important;
+    width: auto !important;
+    margin: 0 0 0 4px !important;
+  }
 
-    .margin-tb-64 { margin: 32px 0; }
-    .margin-b-64 { margin-bottom: 32px; }
-    .padding-tb-64 { padding: 32px 0; }
-    .m-left-text { text-align: left; }
-    .m-flex-start { align-items: flex-start; }
+  .mktoRadioList label {
+    margin: 0 30px 0 4px !important
+  }
 
-    #lp-header {
-        min-height: auto;
-        padding: 24px 0;
-    }
+  .mktoLabel:has(.label-visible) {
+    margin: -12px 0 20px -12px !important
+  }
 
-    #lp-header a {
-        margin-top: 16px;
-        /*padding-right: 0px;*/
-        /*padding-top: 16px;*/
-        /*font-size: 16px;*/
-    }
+  .mktoFormRow {
+    margin: 0 0 8px 0 !important;
+  }
 
-    #emory-logo {
-        width: 100%;
-    }
+  .mktoFormRow input[type='hidden'] {
+    display: none;
+  }
 
-    .head-info-wrap {
-        width: 100%;
-        padding-left: 0;
-    }
+  .mktoButtonWrap {
+    flex-direction: column-reverse;
+  }
 
-    a.tel {
-        text-align: left;
-    }
+  .mktoButton {
+    margin-top: -16px !important;
+    height: 42px !important;
+    font-size: 18px !important;
+    transition: color 0.3s ease-in-out;
+  }
 
-    #lp-promo {
-        text-align: center;
-    }
+  .mktoButton:hover {
+    opacity: 0.8;
+  }
 
-    #lp-promo p {
-        font-size: 0.9em;
-    }
+  .mktoButton[data-dir='prev'] {
+    background: #4e4d4d !important;
+    margin: 16px 16px 0 0 !important;
+  }
 
-    #lp-hero {
-        background-size: contain;
-        background-position: top center;
-    }
+  .mktoForm {
+    max-width: 100% !important;
+    margin-top: -16px !important;
+  }
 
-    #lp-form-wrap {
-        padding: 0;
-    }
+  /*.mktoForm label {*/
+  /*  top: 4px;*/
+  /*  left: -7px;*/
+  /*}*/
 
-    #lp-form {
-        margin: 32px 0 24px 0;
-        padding: 32px;
-    }
+  .mktoForm input,
+  .mktoForm select {
+    height: 48px !important;
+  }
 
-    #lp-phone {
-        border-radius: 0 0 4px 4px;
-        width: 100%;
-        background: #FECE4D;
-        color: #022064;
-        text-align: center;
-        margin-top: -48px;
-    }
+  .mktoForm legend {
+    margin: 0 0 -4px 0 !important;
+  }
 
-    .hero-space {
-        padding-top: 200px;
-    }
+  .form-disc {
+    padding: 0 !important;
+    margin: 12px 0 0 0 !important;
+  }
 
-    .padding-r-32, .padding-l-32 {
-        padding: 0;
-    }
+  .embeddedServiceInvitation {
+    display: none;
+  }
 
-    .mob-only-padding-t-32 {
-        padding-top: 32px;
-    }
+  #ecomm-wrapper {
+    padding: 0 32px;
+  }
 
-    .mob-only-margin-t-32 {
-        margin-top: 32px;
-    }
-
-    .mob-only-margin-b-32 {
-        margin-bottom: 32px;
-    }
-
-    .mob-only-margin-t-64 {
-        margin-top: 64px;
-    }
-
-    .mob-only-margin-b-64 {
-        margin-bottom: 64px;
-    }
-
-    .mob-only-margin-tb-64 {
-        margin-top: 64px;
-        margin-bottom: 64px;
-    }
-
-    #image-square {
-        max-height: none;
-    }
-
-    .box-horizontal {
-        width: 100%;
-        height: auto;
-        background-image: none;
-    }
-
-    .mob-bg-blue-light {
-        background-color: #418FDE;
-    }
-
-    .mob-bg-gray {
-        background-color: #f5f5f5;
-    }
-
-    #diagonal {
-        background-image: none;
-    }
-
-    #footer {
-        padding: 32px;
-    }
-
-    /* form stuff */
-
-    .mktoFormRow {
-        margin: 0 0 16px 0 !important;
-    }
-
-    .mktoFormRow input[type="hidden"] {
-        display: none;
-    }
-
-    .mktoButtonWrap {
-        flex-direction: column-reverse;
-    }
-
-    .mktoButton {
-        margin-top: -16px !important;
-        height: 42px !important;
-        font-size: 18px !important;
-        transition: color .3s ease-in-out;
-    }
-
-    .mktoButton:hover {
-        opacity: 0.8;
-    }
-
-    .mktoButton[data-dir="prev"] {
-        background: #4e4d4d !important;
-        margin: 16px 16px 0 0 !important;
-    }
-
-    .mktoForm {
-        max-width: 100% !important;
-        padding: 24px 0 !important;
-        margin-top: -16px !important;
-    }
-
-    .mktoForm label {
-        top: 4px;
-        left: -7px;
-    }
-
-    .mktoForm input, .mktoForm select {
-        height: 48px !important;
-    }
-
-    .mktoForm legend {
-        margin: 0 0 -4px -8px !important;
-    }
-
-    .form-disc {
-        padding: 0 !important;
-    }
-
-    .embeddedServiceInvitation { display: none; }
-
-    #ecomm-wrapper {
-        padding: 0 32px;
-    }
-
-    form#ecomm_form {
-        display: flex;
-        flex-direction: column;
-    }
-
+  form#ecomm_form {
+    display: flex;
+    flex-direction: column;
+  }
 }
