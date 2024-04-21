@@ -1,6 +1,6 @@
 export const FormBreaker = (currentScript) => {
   const formId = document.getElementsByClassName('lp-form')[0].id.split('mktoForm_').pop();
-  console.log('formId:', formId);
+  console.log('Found formId in DOM:', formId);
 
   MktoForms2.loadForm('https://learn.bisk.com', '058-NIT-467', formId);
 
@@ -37,7 +37,7 @@ export const FormBreaker = (currentScript) => {
   //////////// Marketo Form Magic ///////////
 
   MktoForms2.whenReady(function (form) {
-    console.log('form is ready');
+    console.log(`Form with ${formId} is ready`);
 
     let mForm = form;
     var formEl = form.getFormElem()[0],
@@ -242,7 +242,6 @@ export const FormBreaker = (currentScript) => {
     ) {
       try {
         document.querySelectorAll(`input[name=${groupField}]`)[1].addEventListener('click', () => {
-          console.log('clicked');
           setTimeout(() => {
             let input = document.querySelectorAll(`input[name=${groupInputField}]`)[0];
             input.placeholder = document.querySelectorAll(
@@ -252,7 +251,7 @@ export const FormBreaker = (currentScript) => {
           }, 10);
         });
       } catch (e) {
-        console.log('no group field found');
+        console.log('No custom group field found');
       }
     }
 
