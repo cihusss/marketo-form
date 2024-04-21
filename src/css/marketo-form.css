@@ -128,6 +128,7 @@
   display: flex;
   position: relative;
   margin: -5px 0 20px -12px;
+  width: 100% !important;
 }
 .mktoAsterix {
   padding-left: 4px !important;
@@ -141,7 +142,7 @@
 }
 
 .mktoErrorArrow {
-  background-position: #cc0000 !important;
+  background: #cc0000 !important;
   box-shadow: none !important;
   border: none !important;
 }
@@ -239,6 +240,10 @@ select {
   margin: 0 4px 0 0 !important;
 }
 
+.label-visible {
+  font-size: 14px;
+}
+
 @media (max-width: 767px) {
 
   .mktoRadioList input[type='radio'] {
@@ -253,7 +258,7 @@ select {
   }
 
   .mktoLabel:has(.label-visible) {
-    margin: -18px 0 20px -12px !important
+    margin: -18px 0 16px -12px !important;
   }
 
   .mktoFormRow {
