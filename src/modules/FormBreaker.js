@@ -1,6 +1,12 @@
 export const FormBreaker = (currentScript) => {
-  const formId = document.getElementsByClassName('lp-form')[0].id.split('mktoForm_').pop();
+  let formId;
 
+  try {
+    formId = document.getElementsByClassName('lp-form')[0].id.split('mktoForm_').pop();
+  } catch (e) {
+    console.log('No form ID found in DOM');
+    return;
+  }
   if (formId === undefined) {
     console.log('No form ID found in DOM');
     return;
@@ -15,8 +21,7 @@ export const FormBreaker = (currentScript) => {
   const requiredFields = currentScript.getAttribute('requiredFields').split(',');
   const btnBg = currentScript.getAttribute('btnBg');
   const btnFg = currentScript.getAttribute('btnFg');
-  const groupField = currentScript.getAttribute('groupField');
-  const groupInputField = currentScript.getAttribute('groupInputField');
+  // const groupField = currentScript.getAttribute('groupField');
   const rq = [];
 
   requiredFields.forEach((field) => {
@@ -240,26 +245,23 @@ export const FormBreaker = (currentScript) => {
       labelLogic(input);
     }
 
-    if (
-      groupField !== undefined &&
-      groupInputField !== undefined &&
-      groupField !== '' &&
-      groupInputField !== ''
-    ) {
-      try {
-        document.querySelectorAll(`input[name=${groupField}]`)[1].addEventListener('click', () => {
-          setTimeout(() => {
-            let input = document.querySelectorAll(`input[name=${groupInputField}]`)[0];
-            input.placeholder = document.querySelectorAll(
-              `label[for=${groupInputField}]`
-            )[0].innerText;
-            labelLogic(input);
-          }, 10);
-        });
-      } catch (e) {
-        console.log('No custom group field found');
-      }
+    // if (groupField !== undefined && groupField !== '') {
+    try {
+      let radio = document.querySelectorAll(`input[type='radio']`)[1];
+      // let radio = document.querySelectorAll(`input[name=${groupField}]`)[1];
+      let row = radio.parentNode.parentNode.parentNode.parentNode;
+      radio.addEventListener('click', () => {
+        setTimeout(() => {
+          let input = row.nextSibling.childNodes[0].childNodes[1].childNodes[2];
+          let label = row.nextSibling.childNodes[0].childNodes[1].childNodes[0];
+          input.placeholder = label.innerText;
+          labelLogic(input);
+        }, 10);
+      });
+    } catch (e) {
+      console.log('No custom group field found');
     }
+    // }
 
     console.log(inputs[0].value);
 
@@ -283,16 +285,23 @@ export const FormBreaker = (currentScript) => {
     btnSubmit.style.background = btnBg;
     btnSubmit.style.color = btnFg;
 
-    let btnNext = document.querySelector('button[data-dir="next"]');
-    btnNext.style.background = btnBg;
-    btnNext.style.color = btnFg;
+    try {
+      let btnNext = document.querySelector('button[data-dir="next"]');
+      btnNext.style.background = btnBg;
+      btnNext.style.color = btnFg;
+    } catch (e) {}
 
     let legends = document.querySelectorAll('legend');
     legends.forEach((element) => {
       let currText = element.innerHTML.replace('0', '');
       let steps = document.querySelectorAll('fieldset');
       element.innerHTML = currText + ' of ' + steps.length;
-      element.setAttribute('style', 'display: block !important');
+      if (legends.length === 1) {
+        element.setAttribute('style', 'opacity: 0 !important');
+        document.getElementById('fsaat-0').setAttribute('style', 'margin-top: -20px !important');
+      } else {
+        element.setAttribute('style', 'display: block !important');
+      }
     });
 
     let lala = document.querySelectorAll('.mktoField');
