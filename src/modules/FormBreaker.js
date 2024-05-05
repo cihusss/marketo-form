@@ -246,24 +246,21 @@ export const FormBreaker = (currentScript) => {
     }
 
     // if (groupField !== undefined && groupField !== '') {
-    try {
-      let radio = document.querySelectorAll(`input[type='radio']`)[1];
-      // let radio = document.querySelectorAll(`input[name=${groupField}]`)[1];
-      let row = radio.parentNode.parentNode.parentNode.parentNode;
-      radio.addEventListener('click', () => {
-        setTimeout(() => {
-          let input = row.nextSibling.childNodes[0].childNodes[1].childNodes[2];
-          let label = row.nextSibling.childNodes[0].childNodes[1].childNodes[0];
-          input.placeholder = label.innerText;
-          labelLogic(input);
-        }, 10);
-      });
-    } catch (e) {
-      console.log('No custom group field found');
-    }
+    // try {
+    //   let radio = document.querySelectorAll(`input[type='radio']`)[1];
+    //   // let radio = document.querySelectorAll(`input[name=${groupField}]`)[1];
+    //   let row = radio.parentNode.parentNode.parentNode.parentNode;
+    //   radio.addEventListener('click', () => {
+    //     setTimeout(() => {
+    //       let input = row.nextSibling.childNodes[0].childNodes[1].childNodes[2];
+    //       let label = row.nextSibling.childNodes[0].childNodes[1].childNodes[0];
+    //       input.placeholder = label.innerText;
+    //       labelLogic(input);
+    //     }, 10);
+    //   });
+    // } catch (e) {
+    //   console.log('No custom group field found');
     // }
-
-    console.log(inputs[0].value);
 
     let btnSubmit = document.querySelector('button[type="submit"]');
     btnSubmit.addEventListener('click', function () {
