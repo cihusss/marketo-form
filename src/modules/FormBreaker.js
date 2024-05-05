@@ -21,6 +21,7 @@ export const FormBreaker = (currentScript) => {
   const requiredFields = currentScript.getAttribute('requiredFields').split(',');
   const btnBg = currentScript.getAttribute('btnBg');
   const btnFg = currentScript.getAttribute('btnFg');
+  const groupField = currentScript.getAttribute('groupField');
   // const groupField = currentScript.getAttribute('groupField');
   const rq = [];
 
@@ -245,22 +246,23 @@ export const FormBreaker = (currentScript) => {
       labelLogic(input);
     }
 
-    // if (groupField !== undefined && groupField !== '') {
-    // try {
-    //   let radio = document.querySelectorAll(`input[type='radio']`)[1];
-    //   // let radio = document.querySelectorAll(`input[name=${groupField}]`)[1];
-    //   let row = radio.parentNode.parentNode.parentNode.parentNode;
-    //   radio.addEventListener('click', () => {
-    //     setTimeout(() => {
-    //       let input = row.nextSibling.childNodes[0].childNodes[1].childNodes[2];
-    //       let label = row.nextSibling.childNodes[0].childNodes[1].childNodes[0];
-    //       input.placeholder = label.innerText;
-    //       labelLogic(input);
-    //     }, 10);
-    //   });
-    // } catch (e) {
-    //   console.log('No custom group field found');
-    // }
+    if (groupField === 'true') {
+      try {
+        let radio = document.querySelectorAll(`input[type='radio']`)[1];
+        // let radio = document.querySelectorAll(`input[name=${groupField}]`)[1];
+        let row = radio.parentNode.parentNode.parentNode.parentNode;
+        radio.addEventListener('click', () => {
+          setTimeout(() => {
+            let input = row.nextSibling.childNodes[0].childNodes[1].childNodes[2];
+            let label = row.nextSibling.childNodes[0].childNodes[1].childNodes[0];
+            input.placeholder = label.innerText;
+            labelLogic(input);
+          }, 10);
+        });
+      } catch (e) {
+        console.log('No custom group field found');
+      }
+    }
 
     let btnSubmit = document.querySelector('button[type="submit"]');
     btnSubmit.addEventListener('click', function () {
