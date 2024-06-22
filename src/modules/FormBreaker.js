@@ -1,5 +1,5 @@
 export const FormBreaker = (currentScript) => {
-  console.log('FormBreaker v1.13 loaded');
+  console.log('FormBreaker v1.14 loaded');
 
   let formId;
 
@@ -19,17 +19,6 @@ export const FormBreaker = (currentScript) => {
   MktoForms2.loadForm('https://learn.bisk.com', '058-NIT-467', formId);
 
   //////////// Marketo Form Config ///////////
-
-  const requiredFields = [
-    'Program_of_Interest__c',
-    'FirstName',
-    'LastName',
-    'Email',
-    'Phone',
-    'Country_of_Citizenship__c',
-  ];
-  const btnBg = '#cc0000';
-  const btnFg = 'white';
 
   // const requiredFields = currentScript.getAttribute('requiredFields').split(',');
   // const btnBg = currentScript.getAttribute('btnBg');
