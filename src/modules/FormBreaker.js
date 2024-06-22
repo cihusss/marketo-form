@@ -1,5 +1,5 @@
 export const FormBreaker = (currentScript) => {
-  console.log('FormBreaker v1.1 loaded');
+  console.log('FormBreaker v1.12 loaded');
 
   let formId;
 
@@ -23,7 +23,7 @@ export const FormBreaker = (currentScript) => {
   // const requiredFields = currentScript.getAttribute('requiredFields').split(',');
   // const btnBg = currentScript.getAttribute('btnBg');
   // const btnFg = currentScript.getAttribute('btnFg');
-  // const groupField = currentScript.getAttribute('groupField');
+  const groupField = currentScript.getAttribute('groupField');
   const rq = [];
 
   requiredFields.forEach((field) => {
