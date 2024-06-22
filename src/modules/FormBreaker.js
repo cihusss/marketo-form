@@ -1,4 +1,6 @@
 export const FormBreaker = (currentScript) => {
+  console.log('FormBreaker v1.1 loaded');
+
   let formId;
 
   try {
@@ -18,10 +20,9 @@ export const FormBreaker = (currentScript) => {
 
   //////////// Marketo Form Config ///////////
 
-  const requiredFields = currentScript.getAttribute('requiredFields').split(',');
-  const btnBg = currentScript.getAttribute('btnBg');
-  const btnFg = currentScript.getAttribute('btnFg');
-  const groupField = currentScript.getAttribute('groupField');
+  // const requiredFields = currentScript.getAttribute('requiredFields').split(',');
+  // const btnBg = currentScript.getAttribute('btnBg');
+  // const btnFg = currentScript.getAttribute('btnFg');
   // const groupField = currentScript.getAttribute('groupField');
   const rq = [];
 
