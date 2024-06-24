@@ -13,16 +13,15 @@ export const FormBreaker = (currentScript) => {
     console.log('No form ID found in DOM');
     return;
   }
-
   console.log(`Found form ${formId} in DOM`);
 
   MktoForms2.loadForm('https://learn.bisk.com', '058-NIT-467', formId);
 
   //////////// Marketo Form Config ///////////
 
-  // const requiredFields = currentScript.getAttribute('requiredFields').split(',');
-  // const btnBg = currentScript.getAttribute('btnBg');
-  // const btnFg = currentScript.getAttribute('btnFg');
+  const requiredFields = currentScript.getAttribute('requiredFields').split(',');
+  const btnBg = currentScript.getAttribute('btnBg');
+  const btnFg = currentScript.getAttribute('btnFg');
   const groupField = currentScript.getAttribute('groupField');
   const rq = [];
 
