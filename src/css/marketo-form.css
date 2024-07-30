@@ -326,3 +326,10 @@ select {
     flex-direction: column;
   }
 }
+
+@media screen and (max-width:480px){
+  .mktoForm label {
+    top:10px;
+    left:-5px;
+  }
+}
